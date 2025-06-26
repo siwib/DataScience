@@ -1,5 +1,8 @@
 use ecommerce
 
+    # Menghitung tanggal pembelian terakhir (Recency), jumlah pembelian unik (Frequency), 
+    # dan total nilai transaksi (Monetary) untuk setiap pelanggan, 
+    # sambil mendeteksi anomali dengan mengecualikan transaksi decoy_flag = 0
 WITH CustomerRFM AS (
     SELECT
         customer_id,
@@ -13,6 +16,9 @@ WITH CustomerRFM AS (
     GROUP BY
         customer_id
 ),
+
+    # Memberikan skor (1-5) untuk Recency, Frequency, dan Monetary 
+    # kepada setiap pelanggan berdasarkan kuintil
 RFMScores AS (
     SELECT
         customer_id,
@@ -25,6 +31,10 @@ RFMScores AS (
     FROM
         CustomerRFM
 )
+
+    # Menggunakan kombinasi skor RFM untuk menetapkan segmen pelanggan, 
+    # seperti Champions, Loyal Customers, New Customers, At Risk, Lost Customers, 
+    # dan Potential Loyalist
 SELECT
     customer_id,
     recency_days,
