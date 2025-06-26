@@ -1,0 +1,7 @@
+B_modeling.ipynb merupakan hasil analisis kredit skor dari data credit_scoring.cvs
+Analisis kredit skor menggunakan baseline Logistic Regression dan Gradient Boosting (XGBoost)
+Data Preprocessing bisa menggunakan encoding di kolom 'credit_score' karena dapat dikategorikan untuk tiap range skor kreditnya
+Analisis ini tidak menggunakan encoding karena hasil nya lebih baik dibandingkan dengan data yang di encoding
+Data credit_score.csv ini merupakan data yang imbalance dan tidak bisa ditangani dengan oversampling karena hasil data test tetap buruk dan imbalance
+Analisis ini tidak bisa menunjukkan model yang baik karena model trainingnya tidak bisa belajar dengan baik 
+Sehingga hasilnya dibawah rata-rata dalam kategori baik.
