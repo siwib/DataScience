@@ -5,3 +5,27 @@ Analisis ini tidak menggunakan encoding karena hasil nya lebih baik dibandingkan
 Data credit_score.csv ini merupakan data yang imbalance dan tidak bisa ditangani dengan oversampling karena hasil data test tetap buruk dan imbalance
 Analisis ini tidak bisa menunjukkan model yang baik karena model trainingnya tidak bisa belajar dengan baik 
 Sehingga hasilnya dibawah rata-rata dalam kategori baik.
+
+Hasil testing dengan Logistic Regression:
+Accuracy: 67%
+Precision data minoritas: 3%
+recall data minoritas: 81% 
+f1-score data minoritas: 6% 
+ROC AUC: 79,03%
+AUPRC: 5,75%
+
+Hasil testing dengan XGBoost:
+Accuracy: 96%
+Precision data minoritas: 3%
+recall data minoritas: 6% 
+f1-score data minoritas: 4% 
+ROC AUC: 76,18%
+AUPRC: 3,18%
+
+Kesimpulan 
+1. Terlihat bahwa hasil testing tidak menunjukkan prediksi yang baik dalam data minoritas karena
+data imbalance yang sangat parah, 98% data 'deafult' berlabel 0. 
+2. Model terbaik adalah XGBoost jika dilihar dari akurasi keseluruhan.
+3. Sedangkan jika melihat dari identifikasi kelas minoritas, Logistic Regression lebih baik
+walaupun dengan banyak false positive
+4. Kedua model sangat buruk dalam memprediksi kelas minoritas dilihat dari F1-score dan AUPRC yang sangat rendah
